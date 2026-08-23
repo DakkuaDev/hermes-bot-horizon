@@ -1,0 +1,33 @@
+name: 🐛 Bug Report
+description: Reporta un error de Bot Horizon
+labels: [bug]
+body:
+  - type: textarea
+    id: describe
+    attributes:
+      label: Describe el bug
+      description: Qué pasó y qué esperabas que pasara
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Pasos para reproducir
+      placeholder: |
+        1. Abro el pueblo
+        2. Compro una mascota
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Entorno
+      description: Sistema operativo, versión de Hermes Desktop, versión del plugin
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / capturas
+      description: Adjunta capturas o logs si es posible

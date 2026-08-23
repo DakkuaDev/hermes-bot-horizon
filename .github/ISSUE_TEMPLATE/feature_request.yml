@@ -1,0 +1,23 @@
+name: 💡 Feature Request
+description: Sugiere una mejora o funcionalidad nueva
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: La idea
+      description: Qué te gustaría que hiciera Bot Horizon
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Por qué
+      description: Qué problema resuelve o qué valor aporta
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Ejemplo (opcional)
+      description: Cómo lo imaginas en la UI

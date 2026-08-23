@@ -1,0 +1,7 @@
+{
+  "name": "bot-horizon",
+  "label": "Bot Horizon",
+  "description": "Bot Mode gamification \u2014 a tiny town where your bots live, work and level up. Fleet presence, XP, levels (Stone\u2192Mythic), badges, pets and routine quests.",
+  "icon": "Home",
+  "api": "plugin_api.py"
+}

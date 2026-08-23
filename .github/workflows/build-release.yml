@@ -1,0 +1,51 @@
+name: Build & Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate plugin.js syntax
+        run: node --check desktop/bot-horizon/plugin.js
+
+      - name: Validate manifest
+        run: |
+          python3 -c "import json; json.load(open('gateway/bot-horizon/dashboard/manifest.json'))"
+          echo "manifest OK"
+
+      - name: Build zip
+        run: |
+          mkdir -p dist/bot-horizon
+          cp -r desktop gateway README.md LICENSE CONTRIBUTING.md SECURITY.md dist/bot-horizon/
+          cd dist && zip -r ../bot-horizon.zip bot-horizon
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bot-horizon
+          path: bot-horizon.zip
+
+      - name: Draft release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: bot-horizon.zip
+          name: Bot Horizon
+          tag_name: latest
+          generate_release_notes: true
+          make_latest: true
+          draft: false
