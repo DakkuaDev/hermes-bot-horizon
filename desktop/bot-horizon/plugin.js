@@ -77,88 +77,19 @@ const BV_I18N = {
     assignPet: 'Assign to', buyPet: 'Buy pet', bought: 'Bought', assigned: 'assigned', assignedTo: 'assigned to',
     decoPlaced: 'Placed in the town', show: 'Show', hide: 'Hide', remove: 'Remove',
     size: 'Size', rotation: 'Rotation', dragDecoHint: 'Drag it in the town to move it · click a placed decoration to configure',
-    settingsTitle: 'Town settings', townNameLabel: 'Town name', mayorNameLabel: 'Mayor name', language: 'Language',
+    settingsTitle: 'Town settings', townNameLabel: 'Town name', mayorNameLabel: 'Mayor name',
     resetPositions: 'Reset plot positions', resetTown: 'Reset town to zero',
     resetTownConfirm: 'Are you sure? This restarts the game: all bots go back to Level 1 with 0 XP and 0 points, and your town name, positions, hats and decorations are deleted. This cannot be undone.',
     resetTownYes: 'Yes, reset everything', cancel: 'Cancel',
-    creditsTitle: 'Credits', repo: 'Plugin repo', repoUrl: 'https://github.com/DakkuaDev/hermes-plugins', donate: 'Buy me a coffee',
-    close: 'Close', langEn: 'English', langEs: 'Español',
+    creditsTitle: 'Credits', repo: 'Plugin repo', repoUrl: 'https://github.com/DakkuaDev/hermes-bot-horizon', donate: 'Buy me a coffee',
+    close: 'Close',
   },
-  es: {
-    town: 'Bot Horizon', nav: 'Bot Horizon', palette: 'Bot Horizon — abrir el pueblo',
-    mayor: 'Alcalde', mayorLevel: 'Nivel del pueblo',
-    quests: 'Tablón de misiones', questsEmpty: 'Aún no hay rutinas. ¡Dale una rutina a un bot y se convertirá en misión!', activePets: 'Mascotas activas',
-    nextRun: 'próxima', xp: 'XP', today: 'hoy', level: 'Nivel', state: 'estado', badges: 'Insignias',
-    openChat: 'Abrir chat',
-    credits: 'hecho con Hermes',
-    empty: 'Todavía no hay bots. Crea un Bot en la pestaña Bots y se mudará al pueblo.',
-    noBackend: 'Backend no detectado — instala el plugin de gateway Bot Horizon (ver README) para datos en vivo.',
-    busy: 'ocupado', working: 'trabajando', talking: 'hablando', thinking: 'pensando',
-    questing: 'en misión', idle: 'libre', sleeping: 'durmiendo', offline: 'desconectado',
-    levelup: '✨ {bot} alcanzó el Nivel {level} — ¡{rank}!',
-    townLevelup: '🏘️ ¡Bot Horizon alcanzó el Nivel de Pueblo {level} — {rank}!',
-    streak: 'Racha', streakTitle: 'Racha diaria', streakDays: '{count} días de racha',
-    lives: 'Vidas', livesOf: '{lives}/{max}', buyLife: 'Comprar una vida', lifeCost: '100 monedas',
-    livesMax: 'Máximo de vidas alcanzado', livesNoCoins: 'No tienes suficientes monedas',
-    streakHint: 'Usa Hermes cada día para mantener la racha 🔥. Cada día perdido cuesta una vida ❤️ (compra más con monedas). Sin vidas = racha perdida.',
-    streakActive: 'Activa — ¡síguela!', streakRisk: '⚠️ En riesgo — ¡habla con Hermes en la próxima hora!',
-    streakRiskBanner: '⏳ Tu racha está por acabar — ¡habla con Hermes para mantenerla!',
-    streakProtected: '🛡️ Protegida por una vida', streakLost: '💔 Racha perdida — empieza de nuevo',
-    streakLast: 'Última actividad', hAgo: 'hace {h}h', mAgo: 'hace {m}m',
-    streakEventLifeUsed: '🛡️ Fallaste un día — ¡una vida salvó tu racha! ({extra})',
-    streakEventLost: '💔 Tu racha se perdió. ¡Usa Hermes cada día para recuperarla!',
-    streakEventBought: '❤️ ¡Vida comprada!',
-    workbench: 'Banco de trabajo — donde trabajan los bots', questFlag: 'Bandera de misión (rutina activa)',
-    badgesTitle: 'Insignias',
-    levelsTitle: 'Niveles y XP',
-    botLadderTitle: 'Niveles de bot',
-    townLadderTitle: 'Nivel del pueblo (global)',
-    nextMilestone: 'Siguiente hito de racha', milestoneReward: '{coins} monedas',
-    streakMilestone: '🎁 ¡Racha de {streak} días — ganaste {coins} monedas!',
-    badgeHow: { 'first-steps': 'Primer mensaje de bot', 'quest-accepted': 'Un bot tiene rutina', chatterbox: '100 mensajes de bot', marathoner: '1.000 mensajes de bot', 'night-owl': 'Activo 23:00–05:00', speedster: 'Tarea en <1 min', collaborator: 'Chat de grupo', messenger: 'DM entre bots', streak: 'Racha de 5 días' },
-    placed: '¡Colocada en el pueblo!',
-    collapse: 'Contraer', expand: 'Expandir',
-    rankTitles: { Stone: 'Piedra', Copper: 'Cobre', Silver: 'Plata', Gold: 'Oro', Platinum: 'Platino', Diamond: 'Diamante', Emerald: 'Esmeralda', Sapphire: 'Zafiro', Ruby: 'Rubí', Mythic: 'Mítico' },
-    badgeNames: { 'first-steps': 'Primeros pasos', 'quest-accepted': 'Misión aceptada', chatterbox: 'Parlanchín', marathoner: 'Maratoniano', 'night-owl': 'Búho nocturno', speedster: 'Veloz', collaborator: 'Colaborador', messenger: 'Mensajero', streak: 'En racha' },
-    help: 'Ayuda', settings: 'Ajustes', store: 'Tienda', points: 'puntos', balance: 'Saldo',
-    howXp: 'Cómo ganar XP', pointsTitle: 'Tienda · puntos',
-    xpR1a: 'Cada mensaje escrito por un bot', xpR1b: '+1 XP',
-    xpR2a: 'Cada herramienta ejecutada', xpR2b: '+3 XP',
-    xpR3a: 'Rutina (misión) completada', xpR3b: '+10 XP',
-    xpR4a: 'Turno en chat de grupo', xpR4b: '+5 XP',
-    xpR5a: 'DM entre bots gestionado', xpR5b: '+2 XP',
-    xpR6a: '@mención gestionada', xpR6b: '+2 XP',
-    ptsR1a: 'Cada subida de nivel de un bot', ptsR1b: '+50 puntos',
-    ptsR2a: 'Cada subida de nivel del alcalde (tú)', ptsR2b: '+100 puntos',
-    statesTitle: 'Estados de los bots — en directo en el pueblo',
-    statesHint: 'El pueblo muestra lo que hace cada bot ahora mismo:',
-    storeHats: 'Sombreros', storeDecos: 'Decoraciones', storePets: 'Mascotas',
-    buy: 'Comprar', owned: 'Comprado', equip: 'Poner', equipTo: 'Poner a', noBots: 'No hay bots para equipar',
-    buyHatHint: 'Compra un sombrero y elige qué bot lo lleva',
-    petHint: 'Cada bot puede tener una mascota. Dan bonos pasivos cada 15 min.',
-    petIncome: '+{val} XP cada 15 min', petBoost: '+{val}% de XP',
-    petHybrid: '+{val} XP/15min + {pct}%', petStreakSaver: 'La racha gasta 1 vida menos',
-    assignPet: 'Asignar a', buyPet: 'Comprar', bought: 'Comprado', assigned: 'asignada', assignedTo: 'asignada a',
-    decoPlaced: 'Colocada en el pueblo', show: 'Mostrar', hide: 'Ocultar', remove: 'Quitar',
-    size: 'Tamaño', rotation: 'Rotación', dragDecoHint: 'Arrástrala por el pueblo para moverla · haz clic en una decoración colocada para configurarla',
-    settingsTitle: 'Ajustes del pueblo', townNameLabel: 'Nombre del pueblo', mayorNameLabel: 'Nombre del alcalde', language: 'Idioma',
-    resetPositions: 'Reiniciar posiciones', resetTown: 'Reiniciar el pueblo a cero',
-    resetTownConfirm: '¿Seguro? Se reinicia la partida: todos los bots vuelven al Nivel 1 con 0 XP y 0 puntos, y se borran el nombre, posiciones, sombreros y decoraciones. No se puede deshacer.',
-    resetTownYes: 'Sí, reiniciar todo', cancel: 'Cancelar',
-    creditsTitle: 'Créditos', repo: 'Repo del plugin', repoUrl: 'https://github.com/DakkuaDev/hermes-plugins', donate: 'Invítame a un café',
-    close: 'Cerrar', langEn: 'English', langEs: 'Español',
-  },
-}
-
-function useBvI18n(ctx) {
-  const [lang, setLang] = useState(() => ctx.storage.get('lang') || 'en')
+function useBvI18n() {
   const t = (key) => {
-    const bundle = BV_I18N[lang] || BV_I18N.en
-    const val = key.split('.').reduce((o, k) => (o == null ? undefined : o[k]), bundle)
+    const val = key.split('.').reduce((o, k) => (o == null ? undefined : o[k]), BV_I18N.en)
     return val === undefined ? key : val
   }
-  const setLangAndSave = (l) => { ctx.storage.set('lang', l); setLang(l) }
-  return { t, lang, setLang: setLangAndSave }
+  return { t }
 }
 
 /* ------------------------------------------------------------------ *
@@ -909,7 +840,7 @@ function HelpPanel({ t, onClose }) {
   ]})
 }
 
-function SettingsPanel({ ctx, t, lang, setLang, townName, setTownName, mayorName, setMayorName, onResetPlots, onResetTown, onClose }) {
+function SettingsPanel({ ctx, t, townName, setTownName, mayorName, setMayorName, onResetPlots, onResetTown, onClose }) {
   const [draft, setDraft] = useState(townName)
   const [mayorDraft, setMayorDraft] = useState(mayorName)
   const [confirming, setConfirming] = useState(false)
@@ -935,18 +866,6 @@ function SettingsPanel({ ctx, t, lang, setLang, townName, setTownName, mayorName
         jsx('label', { className: 'bv-settings-label', children: t('mayorNameLabel') }),
         jsx('input', { className: 'bv-name-input', value: mayorDraft, onChange: (e) => setMayorDraft(e.target.value), onKeyDown: (e) => { if (e.key === 'Enter') save() } }),
         jsx('button', { className: 'bv-btn', onClick: save, children: 'OK' }),
-      ]}),
-      jsxs('div', { className: 'bv-settings-row', children: [
-        jsx('label', { className: 'bv-settings-label', children: t('language') }),
-        jsx('select', {
-          className: 'bv-select',
-          value: lang,
-          onChange: (e) => setLang(e.target.value),
-          children: [
-            jsx('option', { value: 'en', children: t('langEn') }),
-            jsx('option', { value: 'es', children: t('langEs') }),
-          ],
-        }),
       ]}),
       jsx('button', { className: 'bv-btn bv-btn-block', onClick: () => { onResetPlots && onResetPlots(); haptic('tap') }, children: t('resetPositions') }),
       confirming
@@ -1000,7 +919,7 @@ function ensureNav(ctx, label) {
 }
 
 function BotHorizonPage({ ctx }) {
-  const { t, lang, setLang } = useBvI18n(ctx)
+  const { t } = useBvI18n()
   const now = useNow(60000)
   const hour = new Date(now).getHours()
   const [townName, setTownNameRaw] = useState(() => ctx.storage.get('townName') || t('town'))
@@ -1249,7 +1168,7 @@ function BotHorizonPage({ ctx }) {
       panel === 'help' ? jsx(HelpPanel, { t, onClose: () => setPanel(null) }) : null,
       panel === 'streak' ? jsx(StreakPanel, { t, streak: (data && data.streak) || {}, balance, onBuyLife: buyLife, onClose: () => setPanel(null) }) : null,
       panel === 'settings' ? jsx(SettingsPanel, {
-        ctx, t, lang, setLang, townName, setTownName, mayorName, setMayorName,
+        ctx, t, townName, setTownName, mayorName, setMayorName,
         onResetPlots: () => { ctx.storage.remove('plots'); setPlots({}) },
         onResetTown: resetTown,
         onClose: () => setPanel(null),

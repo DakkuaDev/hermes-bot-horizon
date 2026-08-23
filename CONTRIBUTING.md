@@ -1,50 +1,50 @@
 # Contributing to Bot Horizon
 
-¡Gracias por querer contribuir! 🙌 Bot Horizon es un proyecto **open source** con un flujo claro para que todo el código sea revisado antes de entrar.
+Thanks for wanting to contribute! 🙌 Bot Horizon is an **open source** project with a clear review flow so all code is checked before it lands.
 
-## Cómo contribuir
+## How to contribute
 
-### 1. Reportar errores 🐛
+### 1. Report bugs 🐛
 
-Abre un **[Issue](https://github.com/DakkuaDev/hermes-bot-horizon/issues/new?template=bug_report.yml)** con:
+Open an **[Issue](https://github.com/DakkuaDev/hermes-bot-horizon/issues/new?template=bug_report.yml)** with:
 
-- Pasos para reproducir
-- Qué esperabas que pasara vs. qué pasó
-- Captura de pantalla si aplica
-- Versión de Hermes Desktop y sistema operativo
+- Steps to reproduce
+- Expected vs. actual behavior
+- Screenshot if applicable
+- Hermes Desktop version and OS
 
-### 2. Sugerir mejoras 💡
+### 2. Suggest features 💡
 
-Abre un **[Issue](https://github.com/DakkuaDev/hermes-bot-horizon/issues/new?template=feature_request.yml)** describiendo la mejora y por qué la quieres.
+Open an **[Issue](https://github.com/DakkuaDev/hermes-bot-horizon/issues/new?template=feature_request.yml)** describing the idea and why you want it.
 
-### 3. Enviar código 🧑‍💻
+### 3. Submit code 🧑‍💻
 
-1. **Fork** el repo
-2. Crea una rama: `git checkout -b feat/nombre-corto` o `fix/nombre-corto`
-3. Haz tus cambios (¡con comentarios claros!)
-4. **Prueba** que el plugin sigue funcionando (mira abajo)
-5. Abre un **Pull Request** hacia `main` describiendo qué cambia y por qué
+1. **Fork** the repo
+2. Create a branch: `git checkout -b feat/short-name` or `fix/short-name`
+3. Make your changes (with clear comments!)
+4. **Test** that the plugin still works (see below)
+5. Open a **Pull Request** to `main` describing what changes and why
 
-## Reglas de revisión 🔒
+## Review rules 🔒
 
-- **Nada se mergea a `main` sin un PR revisado** por el mantenedor
-- El PR debe pasar los checks automáticos de CI
-- Los cambios de UI deben incluir captura de antes/después
-- Mantén el plugin **en un único archivo** `plugin.js` siempre que sea posible (instalación simple)
-- **Sin datos personales ni hardcodeados**: el plugin debe funcionar para cualquiera con sus propios bots
+- **Nothing merges to `main` without a reviewed PR** by the maintainer
+- PRs must pass the CI checks
+- UI changes must include before/after screenshots
+- Keep the plugin in a **single `plugin.js` file** whenever possible (simple install)
+- **No personal or hardcoded data**: the plugin must work for anyone with their own bots
 
-## Tests rápidos
+## Quick tests
 
 ```bash
-# Verifica la sintaxis del frontend
+# Frontend syntax check
 node --check desktop/bot-horizon/plugin.js
 
-# Tests del backend (ledger, streak, pets)
+# Backend tests (ledger, streak, pets)
 python3 tests/bv_ledger_test.py
 python3 tests/bv_streak_test.py
 python3 tests/bv_pets_test.py
 ```
 
-## Atribución
+## Attribution
 
-Al modificar o distribuir, **mantén la atribución al autor original** (ver [LICENSE](LICENSE)).
+When modifying or distributing, **keep attribution to the original author** (see [LICENSE](LICENSE)).
