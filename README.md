@@ -82,7 +82,6 @@ Without the backend, plugin.js shows a clear notice — but you can lost your da
 
 <p align="center">
   <img src="assets/screenshots/04-quests-pets.jpg" alt="Quests and pets" width="100%" />
-  <img src="assets/screenshots/02-store.jpg" alt="Store" width="100%" />
 </p>
 
 ## ⚙️ Customization
