@@ -82,7 +82,6 @@ Sin backend, el plugin.js solo muestra un aviso claro de que no se está sincron
 ## 🖼️ Capturas
 
 <p align="center">
-  <img src="assets/screenshots/01-town.jpg" alt="El pueblo" width="100%" />
   <img src="assets/screenshots/04-quests-pets.jpg" alt="Misiones y mascotas" width="100%" />
 </p>
 
