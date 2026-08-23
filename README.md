@@ -5,7 +5,7 @@
 <h1 align="center">Bot Horizon (Hermes Agent)</h1>
 
 <p align="center">
-  <b>Gamifica tus bots de Hermes Agent</b> — un pueblecito donde tus bots viven, trabajan y suben de nivel mientras hacen su trabajo real.
+  <b>Gamify your Hermes Agent bots</b> — a tiny town where your bots live, work and level up while doing their real job.
 </p>
 
 <p align="center">
@@ -16,94 +16,95 @@
 
 ---
 
-## 🏘️ ¿Qué es?
+## 🏘️ What is it?
 
-**Bot Horizon** convierte tu flota de [Bot Mode](https://hermes-agent.nousresearch.com/docs/user-guide/bot-mode) en un **pueblo vivo**:
+**Bot Horizon** turns your [Bot Mode](https://hermes-agent.nousresearch.com/docs/user-guide/bot-mode) fleet into a **living town**:
 
-- Cada bot tiene su **casita** que crece con su nivel
-- Ves **en tiempo real** lo que hace cada bot: `trabajando`, `hablando`, `pensando`, `durmiendo`…
-- Sus **rutinas y crons** se convierten en **misiones** 📋
-- Ganan **XP** por trabajar, suben de **nivel** (Piedra → Mítico) y desbloquean **insignias**
-- La **racha diaria** 🔥 te motiva a usar Hermes cada día (con vidas ❤️ para no perderla)
-- Compra **sombreros**, **decoraciones** y **mascotas** 🐾 para tu pueblo
-- **100% local y gratis**: sin servidores, sin API keys, sin coste de tokens
+- Every bot gets its own **house** that grows with its level
+- See **live** what each bot is doing: `working`, `talking`, `thinking`, `sleeping`…
+- Their **routines and crons** become **quests** 📋
+- They earn **XP** for working, **level up** (Stone → Mythic) and unlock **badges**
+- The **daily streak** 🔥 keeps you coming back (with lives ❤️ so you don't lose it)
+- Buy **hats**, **decorations** and **pets** 🐾 for your town
+- **100% local and free**: no servers, no API keys, no token cost
 
-> Un juego que se juega solo: cuanto más trabajan tus bots, más bonito crece tu pueblo.
+> A game that plays itself: the more your bots work, the prettier your town grows.
 
-## ✨ Lo que consigues
+## ✨ What you get
 
 | | |
 |---|---|
-| 🏠 **Pueblo en vivo** | Casas que evolucionan, estados reales, día/noche |
-| 📋 **Misiones** | Tus crons de Hermes se convierten en quests con XP |
-| ⬆️ **Progresión** | Niveles Piedra→Mítico, insignias, alcalde con nombre |
-| 🔥 **Racha diaria** | Motívate a usar Hermes cada día (vidas incluídas) |
-| 🛒 **Tienda** | Sombreros, decoraciones, mascotas con bonos |
-| 🐾 **Mascotas** | Dan XP pasivo cada 15 min y se ven saltando junto a tu bot |
-| 🌍 **Multi-idioma** | Español e inglés |
+| 🏠 **Live town** | Evolving houses, real states, day/night cycle |
+| 📋 **Quests** | Your Hermes crons become XP quests |
+| ⬆️ **Progression** | Stone→Mythic levels, badges, custom mayor name |
+| 🔥 **Daily streak** | Use Hermes daily, keep your streak (lives included) |
+| 🛒 **Store** | Hats, decorations, pets with bonuses |
+| 🐾 **Pets** | Passive XP every 15 min, hopping next to your bot |
 
-## 🚀 Instalación (30 segundos)
+## 🚀 Install (30 seconds)
 
-### 1. Descarga el plugin
+### 1. Download the plugin
 
-Ve a **[Releases](https://github.com/DakkuaDev/hermes-bot-horizon/releases/latest)** y descarga el archivo **`bot-horizon.zip`**.
+Go to **[Releases](https://github.com/DakkuaDev/hermes-bot-horizon/releases/latest)** and download **`bot-horizon.zip`**.
 
-### 2. Copia el archivo
+### 2. Copy the file
 
-Abre tu carpeta de plugins de Hermes Desktop y **arrastra** el `plugin.js` dentro:
+Open your Hermes Desktop plugins folder and **drag** the `plugin.js` inside:
 
-| Sistema | Carpeta |
+| System | Folder |
 |---|---|
 | Windows | `%LOCALAPPDATA%\hermes\desktop-plugins\bot-horizon\` |
 | macOS / Linux | `~/.hermes/desktop-plugins/bot-horizon/` |
 
-*(Crea la carpeta `bot-horizon` si no existe).*
+*(Create the `bot-horizon` folder if it doesn't exist).*
 
-### 3. Activa y juega
+### 3. Activate and play
 
-En la app de Hermes: **⌘K → Reload desktop plugins** → Settings → activa **Bot Horizon** → abre el pueblo desde la barra lateral 🏘️
+In the Hermes app: **⌘K → Reload desktop plugins** → Settings → enable **Bot Horizon** → open the town from the sidebar 🏘️
 
-> También necesitas que el **backend** del plugin esté activo en tu gateway (ver [Backend](#backend-opcional)). Sin él, el pueblo funciona pero sin datos en vivo.
+> You also need the plugin **backend** on your gateway for live data (see below). Without it the town still works but shows no live data.
 
 ---
 
-### Backend (opcional)
+### Backend (optional)
 
-El backend da datos en vivo de tus bots (estados, XP real, misiones). Cópialo a tu gateway o pídele a tu Hermes Agent que lo haga por ti!:
+The backend provides live data about your bots (states, real XP, quests). Copy it to your gateway:
 
 ```bash
-# en tu máquina con el gateway de Hermes
+# on your Hermes gateway machine
 cp -r gateway/bot-horizon/dashboard ~/.hermes/plugins/bot-horizon/
-# y añade 'bot-horizon' a plugins.enabled en tu config.yaml
+# and add 'bot-horizon' to plugins.enabled in your config.yaml
 ```
 
-Sin backend, el plugin.js solo muestra un aviso claro de que no se está sincronizando y perderás tus datos si re-instalas el plugin. ¡Cuidado!
+Without the backend, plugin.js shows a clear notice — it never crashes.
 
-## 🖼️ Capturas
+## 🖼️ Screenshots
 
 <p align="center">
-  <img src="assets/screenshots/04-quests-pets.jpg" alt="Misiones y mascotas" width="100%" />
+  <img src="assets/screenshots/01-town.jpg" alt="The town" width="48%" />
+  <img src="assets/screenshots/04-quests-pets.jpg" alt="Quests and pets" width="48%" />
+  <img src="assets/screenshots/02-store.jpg" alt="Store" width="48%" />
+  <img src="assets/screenshots/03-help.jpg" alt="Help" width="48%" />
 </p>
 
-## ⚙️ Personalización
+## ⚙️ Customization
 
-- **Nombre del pueblo**: clic en el nombre en la cabecera
-- **Nombre del alcalde**: en Ajustes ⚙️
-- **Idioma**: español / inglés, en Ajustes
+- **Town name**: click the town name in the header
+- **Mayor name**: in Settings ⚙️
 
-## 🛠️ Contribuir
+## 🛠️ Contributing
 
-¡Gracias por querer ayudar! 🙌
+Thanks for wanting to help! 🙌
 
-- **Reportar un error** → abre un [Issue](https://github.com/DakkuaDev/hermes-bot-horizon/issues/new?template=bug_report.yml)
-- **Sugerir una mejora** → abre un [Issue](https://github.com/DakkuaDev/hermes-bot-horizon/issues/new?template=feature_request.yml)
-- **Enviar código** → lee [CONTRIBUTING.md](CONTRIBUTING.md) y abre un **Pull Request** — todo pasa por revisión antes de entrar
+- **Report a bug** → open an [Issue](https://github.com/DakkuaDev/hermes-bot-horizon/issues/new?template=bug_report.yml)
+- **Suggest a feature** → open an [Issue](https://github.com/DakkuaDev/hermes-bot-horizon/issues/new?template=feature_request.yml)
+- **Submit code** → read [CONTRIBUTING.md](CONTRIBUTING.md) and open a **Pull Request** — everything is reviewed before merging
 
-> 🔒 Respeta la [licencia](LICENSE) y atribuye al autor original.
+> 🔒 **Golden rule**: nothing merges to `main` without a reviewed PR. Respect the [license](LICENSE) and attribute the original author.
 
-## ☕ Donar
+## ☕ Donate
 
-¿Te gusta Bot Horizon? Invítame a un café — cada granito ayuda a mantener el proyecto:
+Enjoying Bot Horizon? Buy me a coffee — every bean helps keep the project alive:
 
 <p align="center">
   <a href="https://buymeacoffee.com/dakkua">
@@ -113,6 +114,6 @@ Sin backend, el plugin.js solo muestra un aviso claro de que no se está sincron
   <a href="https://buymeacoffee.com/dakkua"><img src="https://img.shields.io/badge/-Buy%20me%20a%20coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" /></a>
 </p>
 
-## 📄 Licencia
+## 📄 License
 
-[MIT](LICENSE) © [Daniel Guerra Gallardo](https://github.com/DakkuaDev) — hecho con [Hermes Agent](https://hermes-agent.nousresearch.com).
+[MIT](LICENSE) © [Daniel Guerra Gallardo](https://github.com/DakkuaDev) — built with [Hermes Agent](https://hermes-agent.nousresearch.com).
