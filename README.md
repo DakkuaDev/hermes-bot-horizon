@@ -68,7 +68,7 @@ In the Hermes app: **⌘K → Reload desktop plugins** → Settings → enable *
 
 ### Backend (optional)
 
-The backend provides live data about your bots (states, real XP, quests). Copy it to your gateway:
+The backend provides live data about your bots (states, real XP, quests). Copy it to your gateway (os ask Hermes to do it for you!):
 
 ```bash
 # on your Hermes gateway machine
@@ -76,15 +76,13 @@ cp -r gateway/bot-horizon/dashboard ~/.hermes/plugins/bot-horizon/
 # and add 'bot-horizon' to plugins.enabled in your config.yaml
 ```
 
-Without the backend, plugin.js shows a clear notice — it never crashes.
+Without the backend, plugin.js shows a clear notice — but you can lost your data if you update, carefoul!.
 
 ## 🖼️ Screenshots
 
 <p align="center">
-  <img src="assets/screenshots/01-town.jpg" alt="The town" width="48%" />
-  <img src="assets/screenshots/04-quests-pets.jpg" alt="Quests and pets" width="48%" />
-  <img src="assets/screenshots/02-store.jpg" alt="Store" width="48%" />
-  <img src="assets/screenshots/03-help.jpg" alt="Help" width="48%" />
+  <img src="assets/screenshots/04-quests-pets.jpg" alt="Quests and pets" width="100%" />
+  <img src="assets/screenshots/02-store.jpg" alt="Store" width="100%" />
 </p>
 
 ## ⚙️ Customization
@@ -100,7 +98,7 @@ Thanks for wanting to help! 🙌
 - **Suggest a feature** → open an [Issue](https://github.com/DakkuaDev/hermes-bot-horizon/issues/new?template=feature_request.yml)
 - **Submit code** → read [CONTRIBUTING.md](CONTRIBUTING.md) and open a **Pull Request** — everything is reviewed before merging
 
-> 🔒 **Golden rule**: nothing merges to `main` without a reviewed PR. Respect the [license](LICENSE) and attribute the original author.
+> 🔒 Respect the [license](LICENSE) and attribute the original author.
 
 ## ☕ Donate
 
