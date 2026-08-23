@@ -2,7 +2,7 @@
   <img src="assets/banner.png" alt="Bot Horizon banner" width="100%" />
 </p>
 
-<h1 align="center">🤖 Bot Horizon</h1>
+<h1 align="center">Bot Horizon (Hermes Agent)</h1>
 
 <p align="center">
   <b>Gamifica tus bots de Hermes Agent</b> — un pueblecito donde tus bots viven, trabajan y suben de nivel mientras hacen su trabajo real.
@@ -40,7 +40,7 @@
 | 🔥 **Racha diaria** | Motívate a usar Hermes cada día (vidas incluídas) |
 | 🛒 **Tienda** | Sombreros, decoraciones, mascotas con bonos |
 | 🐾 **Mascotas** | Dan XP pasivo cada 15 min y se ven saltando junto a tu bot |
-| 🌍 **i18n** | Español e inglés |
+| 🌍 **Multi-idioma** | Español e inglés |
 
 ## 🚀 Instalación (30 segundos)
 
@@ -69,7 +69,7 @@ En la app de Hermes: **⌘K → Reload desktop plugins** → Settings → activa
 
 ### Backend (opcional)
 
-El backend da datos en vivo de tus bots (estados, XP real, misiones). Cópialo a tu gateway:
+El backend da datos en vivo de tus bots (estados, XP real, misiones). Cópialo a tu gateway o pídele a tu Hermes Agent que lo haga por ti!:
 
 ```bash
 # en tu máquina con el gateway de Hermes
@@ -77,15 +77,13 @@ cp -r gateway/bot-horizon/dashboard ~/.hermes/plugins/bot-horizon/
 # y añade 'bot-horizon' a plugins.enabled en tu config.yaml
 ```
 
-Sin backend, el plugin.js solo muestra un aviso claro — nunca crashea.
+Sin backend, el plugin.js solo muestra un aviso claro de que no se está sincronizando y perderás tus datos si re-instalas el plugin. ¡Cuidado!
 
 ## 🖼️ Capturas
 
 <p align="center">
-  <img src="assets/screenshots/01-town.jpg" alt="El pueblo" width="48%" />
-  <img src="assets/screenshots/04-quests-pets.jpg" alt="Misiones y mascotas" width="48%" />
-  <img src="assets/screenshots/02-store.jpg" alt="Tienda" width="48%" />
-  <img src="assets/screenshots/03-help.jpg" alt="Ayuda" width="48%" />
+  <img src="assets/screenshots/01-town.jpg" alt="El pueblo" width="100%" />
+  <img src="assets/screenshots/04-quests-pets.jpg" alt="Misiones y mascotas" width="100%" />
 </p>
 
 ## ⚙️ Personalización
@@ -102,7 +100,7 @@ Sin backend, el plugin.js solo muestra un aviso claro — nunca crashea.
 - **Sugerir una mejora** → abre un [Issue](https://github.com/DakkuaDev/hermes-bot-horizon/issues/new?template=feature_request.yml)
 - **Enviar código** → lee [CONTRIBUTING.md](CONTRIBUTING.md) y abre un **Pull Request** — todo pasa por revisión antes de entrar
 
-> 🔒 **Regla de oro**: no se mergea nada a `main` sin pasar por PR revisado. Respeta la [licencia](LICENSE) y atribuye al autor original.
+> 🔒 Respeta la [licencia](LICENSE) y atribuye al autor original.
 
 ## ☕ Donar
 
