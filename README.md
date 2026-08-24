@@ -2,7 +2,7 @@
   <img src="assets/banner.png" alt="Bot Horizon banner" width="100%" />
 </p>
 
-<h1 align="center">Bot Horizon (Hermes Agent)</h1>
+<h1 align="center">Bot Horizon</h1>
 
 <p align="center">
   <b>Gamify your Hermes Agent bots</b> — a tiny town where your bots live, work and level up while doing their real job.
