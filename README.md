@@ -114,3 +114,4 @@ Enjoying Bot Horizon? Buy me a coffee — every bean helps keep the project aliv
 ## 📄 License
 
 [MIT](LICENSE) © [Daniel Guerra Gallardo](https://github.com/DakkuaDev) — built with [Hermes Agent](https://hermes-agent.nousresearch.com).
+# Bot Horizon — plugin validation is enforced in CI.
