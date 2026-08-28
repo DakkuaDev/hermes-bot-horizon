@@ -14,6 +14,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -39,18 +42,29 @@ jobs:
           cp -r desktop gateway README.md LICENSE CONTRIBUTING.md SECURITY.md dist/bot-horizon/
           cd dist && zip -r ../bot-horizon.zip bot-horizon
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: bot-horizon
-          path: bot-horizon.zip
+      - name: Read version from manifest
+        id: version
+        run: |
+          V="$(python3 -c "import json; print(json.load(open('gateway/bot-horizon/dashboard/manifest.json'))['version'])")"
+          # normalize to vX.Y.Z
+          V="v${V#v}"
+          echo "VERSION=$V" >> "$GITHUB_ENV"
+          echo "version=$V" >> "$GITHUB_OUTPUT"
+          echo "Will release: $V"
 
-      - name: Draft release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: bot-horizon.zip
-          name: Bot Horizon
-          tag_name: latest
-          generate_release_notes: true
-          make_latest: true
-          draft: false
+      - name: Create or update GitHub release (gh CLI)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ steps.version.outputs.version }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" bot-horizon.zip --clobber
+            echo "✅ Updated release $TAG with fresh zip"
+          else
+            gh release create "$TAG" bot-horizon.zip \
+              --title "Bot Horizon $TAG" \
+              --target main \
+              --generate-notes \
+              --latest
+            echo "✅ Created release $TAG"
+          fi
