@@ -50,6 +50,39 @@ router = APIRouter()
 
 PROFILES_ROOT = os.path.expanduser("~/profiles")
 MAIN_HOME = os.path.expanduser("~")
+
+
+def _resolve_hermes_home() -> tuple[str, str]:
+    """Return (main_home, profiles_root) following Hermes' own resolution.
+
+    The main profile lives in the Hermes home; named bot profiles live under
+    ``<home>/profiles/``. Hermes resolves the home as:
+      - ``HERMES_HOME`` env var if set (Docker/custom → e.g. ``/opt/data``)
+      - else the platform-native default: ``~/.hermes`` on POSIX,
+        ``%LOCALAPPDATA%\\hermes`` on Windows.
+
+    We mirror ``hermes_constants.get_default_hermes_root()`` so the plugin
+    works on ANY instance layout — not just the one it was developed on.
+    """
+    import sys as _sys
+
+    env_home = os.environ.get("HERMES_HOME", "").strip()
+    if env_home:
+        root = env_home
+    elif _sys.platform == "win32":
+        local_appdata = os.environ.get("LOCALAPPDATA", "").strip()
+        base = os.path.join(local_appdata, "hermes") if local_appdata else os.path.join(
+            os.path.expanduser("~"), "AppData", "Local", "hermes")
+        root = base
+    else:
+        root = os.path.join(os.path.expanduser("~"), ".hermes")
+    # If HERMES_HOME points INTO <root>/profiles/<name>, the root is the grandparent.
+    if os.path.basename(os.path.dirname(root)) == "profiles":
+        root = os.path.dirname(os.path.dirname(root))
+    return root, os.path.join(root, "profiles")
+
+
+MAIN_HOME, PROFILES_ROOT = _resolve_hermes_home()
 RANKS = ["Stone", "Copper", "Silver", "Gold", "Platinum",
          "Diamond", "Emerald", "Sapphire", "Ruby", "Mythic"]
 RANK_EMOJI = ["🪨", "🟤", "⚪", "🟡", "⚪", "💎", "🟢", "🔵", "🔴", "🌟"]
