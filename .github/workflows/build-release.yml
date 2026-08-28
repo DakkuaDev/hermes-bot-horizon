@@ -21,7 +21,12 @@ jobs:
           node-version: 20
 
       - name: Validate plugin.js syntax
-        run: node --check desktop/bot-horizon/plugin.js
+        run: |
+          # node --check on a .js containing ESM syntax silently passes even when
+          # the file is broken; force ESM parsing via .mjs so regressions fail CI.
+          cp desktop/bot-horizon/plugin.js /tmp/plugin-check.mjs
+          node --check /tmp/plugin-check.mjs
+          echo "plugin.js syntax OK"
 
       - name: Validate manifest
         run: |

@@ -84,6 +84,8 @@ const BV_I18N = {
     creditsTitle: 'Credits', repo: 'Plugin repo', repoUrl: 'https://github.com/DakkuaDev/hermes-bot-horizon', donate: 'Buy me a coffee',
     close: 'Close',
   },
+}
+
 function useBvI18n() {
   const t = (key) => {
     const val = key.split('.').reduce((o, k) => (o == null ? undefined : o[k]), BV_I18N.en)
