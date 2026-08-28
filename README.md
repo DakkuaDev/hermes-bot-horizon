@@ -81,7 +81,11 @@ Without the backend, plugin.js shows a clear notice — but you can lost your da
 ## 🖼️ Screenshots
 
 <p align="center">
-  <img src="assets/screenshots/04-quests-pets.jpg" alt="Quests and pets" width="100%" />
+  <img src="assets/screenshots/town-quests-pets.png" alt="Live town with quests and pets" width="100%" />
+</p>
+
+<p align="center">
+  <img src="assets/screenshots/help-xp-levels.jpg" alt="XP, levels and bot states help" width="100%" />
 </p>
 
 ## ⚙️ Customization
