@@ -44,6 +44,7 @@ const BV_I18N = {
     streakEventLifeUsed: '🛡️ You missed a day — a life kept your streak! ({extra})',
     streakEventLost: '💔 Your streak was lost. Use Hermes daily to rebuild it!',
     streakEventBought: '❤️ +1 life bought!',
+    streakEventSaved: '🐢 You missed a day — your turtle kept your streak, no life spent!',
     workbench: 'Workbench — where bots work while busy', questFlag: 'Quest flag (routine active)',
     badgesTitle: 'Badges',
     levelsTitle: 'Levels & XP',
@@ -73,7 +74,7 @@ const BV_I18N = {
     buyHatHint: 'Buy a hat, then choose which bot wears it',
     petHint: 'Each bot can have one pet. Pets give passive bonuses every 15 min.',
     petIncome: '+{val} XP every 15 min', petBoost: '+{val}% XP boost',
-    petHybrid: '+{val} XP/15min + {pct}% boost', petStreakSaver: 'Streak loss uses 1 less life',
+    petHybrid: '+{val} XP/15min + {pct}% boost', petStreakSaver: 'A missed day costs no life',
     assignPet: 'Assign to', buyPet: 'Buy pet', bought: 'Bought', assigned: 'assigned', assignedTo: 'assigned to',
     decoPlaced: 'Placed in the town', show: 'Show', hide: 'Hide', remove: 'Remove',
     size: 'Size', rotation: 'Rotation', dragDecoHint: 'Drag it in the town to move it · click a placed decoration to configure',
@@ -1045,12 +1046,14 @@ function BotHorizonPage({ ctx }) {
     streakNotified.current.add(key)
     const msg = st.event === 'life_used' ? t('streakEventLifeUsed').replace('{extra}', st.event_extra || '')
       : st.event === 'streak_lost' ? t('streakEventLost')
-      : st.event === 'life_bought' ? t('streakEventBought') : null
-    if (msg) {
-      host.notify({ kind: 'info', message: msg })
-      setStreakBanner({ kind: st.event, ts: Date.now() })
-      setTimeout(() => setStreakBanner((b) => (b && b.ts === streakBanner.ts ? null : b)), 8000)
-    }
+      : st.event === 'life_bought' ? t('streakEventBought')
+      : st.event === 'streak_saved' ? t('streakEventSaved') : null
+      if (msg) {
+        host.notify({ kind: 'info', message: msg })
+        const ts = Date.now()
+        setStreakBanner({ kind: st.event, ts })
+        setTimeout(() => setStreakBanner((b) => (b && b.ts === ts ? null : b)), 8000)
+      }
   }, [data, t])
 
   // Streak milestone coins (client-side; derived from the ledger streak)
@@ -1166,7 +1169,7 @@ function BotHorizonPage({ ctx }) {
       ]}),
       jsx('div', { className: 'bv-footer', children: t('credits') }),
       streakAtRisk ? jsx('div', { className: 'bv-streak-risk', onClick: () => setPanel('streak'), children: t('streakRiskBanner') }) : null,
-      streakBanner ? jsx('div', { className: 'bv-streak-banner', children: streakBanner.kind === 'bought' ? t('streakEventBought') : streakBanner.kind === 'milestone' ? t('streakMilestone').replace('{streak}', String(streakBanner.streak)).replace('{coins}', String(streakBanner.coins)) : streakBanner.kind === 'life_used' ? t('streakEventLifeUsed').replace('{extra}', ((data && data.streak) || {}).event_extra || '') : t('streakEventLost') }) : null,
+      streakBanner ? jsx('div', { className: 'bv-streak-banner', children: streakBanner.kind === 'bought' ? t('streakEventBought') : streakBanner.kind === 'milestone' ? t('streakMilestone').replace('{streak}', String(streakBanner.streak)).replace('{coins}', String(streakBanner.coins)) : streakBanner.kind === 'life_used' ? t('streakEventLifeUsed').replace('{extra}', ((data && data.streak) || {}).event_extra || '') : streakBanner.kind === 'streak_saved' ? t('streakEventSaved') : t('streakEventLost') }) : null,
       panel === 'help' ? jsx(HelpPanel, { t, onClose: () => setPanel(null) }) : null,
       panel === 'streak' ? jsx(StreakPanel, { t, streak: (data && data.streak) || {}, balance, onBuyLife: buyLife, onClose: () => setPanel(null) }) : null,
       panel === 'settings' ? jsx(SettingsPanel, {

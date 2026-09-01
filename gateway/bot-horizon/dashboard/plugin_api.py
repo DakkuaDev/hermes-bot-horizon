@@ -232,13 +232,17 @@ def _max_last_activity() -> float | None:
     return best
 
 
-def _streak_tick(tnow: float, streak: dict, last_activity: float | None) -> dict:
+def _streak_tick(tnow: float, streak: dict, last_activity: float | None,
+                  has_streak_saver: bool = False) -> dict:
     """Advance the daily-use streak (calendar-day UTC based).
 
     - Activity today keeps/increments the streak (fresh day = +1).
     - A missed day (24h+ without any activity) consumes ONE life if the user
       has any — the streak is PROTECTED (event 'life_used'); with 0 lives the
       streak resets (event 'streak_lost').
+    - Owning a streak_saver pet (turtle) protects the streak on a missed day
+      WITHOUT spending a life (event 'streak_saved') — it only kicks in when
+      a life would otherwise be spent; it never revives an already-lost streak.
     - Lives are a premium resource (default 3, max 5, buyable with coins).
     - Reset town does NOT touch the streak (it's about the user's daily habit,
       not town progress).
@@ -262,7 +266,10 @@ def _streak_tick(tnow: float, streak: dict, last_activity: float | None) -> dict
                 count = 1 if act_day > last_day + 1 else count + 1
             last_day = act_day
         elif last_day < today:                     # stale: at least one missed day
-            if lives > 0:
+            if has_streak_saver:
+                s["event"] = "streak_saved"
+                s["event_extra"] = "🐢 turtle kept your streak!"
+            elif lives > 0:
                 lives -= 1
                 s["event"] = "life_used"
                 s["event_extra"] = f"lives left: {lives}"
@@ -332,7 +339,12 @@ def accrue_now() -> dict:
         pet_tick_ts = tnow
         pets_updated = True
 
-    streak = _streak_tick(tnow, ledger.get("streak", {}), _max_last_activity())
+    has_streak_saver = any(
+        next((p for p in PETS if p["id"] == pet_id), {}).get("type") == "streak_saver"
+        for pet_id in pets.values()
+    )
+    streak = _streak_tick(tnow, ledger.get("streak", {}), _max_last_activity(),
+                           has_streak_saver)
     coin_bank = int(ledger.get("coin_bank", 0)) or 0
     try:
         with open(LEDGER_PATH, "w", encoding="utf-8") as f:

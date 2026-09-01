@@ -54,7 +54,18 @@ s2 = api._streak_tick(now, {}, now - 100)      # count 1
 s2 = api._streak_tick(now + 3 * DAY, s2, now - 100)  # 3-day gap
 check("multi-day gap", (s2["count"], s2["lives"], s2["event"]), (1, 2, "life_used"))
 
-# 9. buy-life caps at MAX_LIVES (simulate by calling the endpoint logic)
+# 9. missed day WITH streak_saver pet -> protected, no life spent
+s4 = api._streak_tick(now, {}, now - 100)      # fresh, count 1
+s4 = api._streak_tick(now + DAY, s4, now - 100, has_streak_saver=True)
+check("streak saver protects", (s4["count"], s4["lives"], s4["event"]), (1, 3, "streak_saved"))
+
+# 10. streak_saver protects even at 0 lives (checked before the lives gate)
+s5 = api._streak_tick(now, {}, now - 100)
+s5["lives"] = 0
+s5 = api._streak_tick(now + DAY, s5, now - 100, has_streak_saver=True)
+check("streak saver protects at 0 lives", (s5["count"], s5["lives"], s5["event"]), (1, 0, "streak_saved"))
+
+# 11. buy-life caps at MAX_LIVES (simulate by calling the endpoint logic)
 s3 = api._streak_tick(now, {}, now - 100)
 ledger = {"streak": s3}
 with open(api.LEDGER_PATH, "w") as f:
