@@ -68,9 +68,8 @@ In the Hermes app: **⌘K → Reload desktop plugins** → Settings → enable *
 
 > You also need the plugin **backend** on your gateway for live data (see below). Without it the town still works but shows no live data.
 
----
 
-### Backend (optional)
+### 4. Backend
 
 The backend provides live data about your bots (states, real XP, quests). Copy it to your gateway (os ask Hermes to do it for you!):
 
@@ -80,7 +79,7 @@ cp -r gateway/bot-horizon/dashboard ~/.hermes/plugins/bot-horizon/
 # and add 'bot-horizon' to plugins.enabled in your config.yaml
 ```
 
-Without the backend, plugin.js shows a clear notice — but you can lost your data if you update, carefoul!.
+Without the backend, plugin.js shows a clear notice — You need this to start playing.
 
 ## 🖼️ Screenshots
 
