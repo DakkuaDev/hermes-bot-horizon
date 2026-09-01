@@ -16,6 +16,10 @@
 
 ---
 
+<p align="center">
+  <img src="assets/demo.gif" alt="Bot Horizon demo" width="100%" />
+</p>
+
 ## 🏘️ What is it?
 
 **Bot Horizon** turns your [Bot Mode](https://hermes-agent.nousresearch.com/docs/user-guide/bot-mode) fleet into a **living town**:
